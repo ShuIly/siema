@@ -30,6 +30,7 @@ module.exports = {
     ]
   },
   plugins: [
+		new webpack.LoaderOptionsPlugin({ options: {} }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
     }),

@@ -3,6 +3,7 @@
 // Explicitly add more rules categorized in categories taken from official docs
 
 module.exports = {
+	"globals": { "__zone_symbol__requestAnimationFrame": true },
   'extends': 'eslint:recommended',
   'parserOptions': {
     "ecmaVersion": 2017,
@@ -166,7 +167,6 @@ module.exports = {
     'no-nested-ternary': 2,
     'no-tabs': 2,
     'no-trailing-spaces': 2,
-    'no-underscore-dangle': 2,
     'no-unneeded-ternary': 2,
     'no-whitespace-before-property': 2,
     'object-curly-spacing': [

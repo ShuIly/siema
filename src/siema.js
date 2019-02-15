@@ -87,7 +87,7 @@ export default class Siema {
    */
   attachEvents() {
     // Resize element on window resize
-    window.addEventListener('resize', this.resizeHandler);
+    window.__zone_symbol__addEventListener('resize', this.resizeHandler);
 
     // If element is draggable / swipable, add event handlers
     if (this.config.draggable) {
@@ -102,18 +102,18 @@ export default class Siema {
       };
 
       // Touch events
-      this.selector.addEventListener('touchstart', this.touchstartHandler);
-      this.selector.addEventListener('touchend', this.touchendHandler);
-      this.selector.addEventListener('touchmove', this.touchmoveHandler);
+      this.selector.__zone_symbol__addEventListener('touchstart', this.touchstartHandler);
+      this.selector.__zone_symbol__addEventListener('touchend', this.touchendHandler);
+      this.selector.__zone_symbol__addEventListener('touchmove', this.touchmoveHandler);
 
       // Mouse events
-      this.selector.addEventListener('mousedown', this.mousedownHandler);
-      this.selector.addEventListener('mouseup', this.mouseupHandler);
-      this.selector.addEventListener('mouseleave', this.mouseleaveHandler);
-      this.selector.addEventListener('mousemove', this.mousemoveHandler);
+      this.selector.__zone_symbol__addEventListener('mousedown', this.mousedownHandler);
+      this.selector.__zone_symbol__addEventListener('mouseup', this.mouseupHandler);
+      this.selector.__zone_symbol__addEventListener('mouseleave', this.mouseleaveHandler);
+      this.selector.__zone_symbol__addEventListener('mousemove', this.mousemoveHandler);
 
       // Click
-      this.selector.addEventListener('click', this.clickHandler);
+      this.selector.__zone_symbol__addEventListener('click', this.clickHandler);
     }
   }
 
@@ -122,15 +122,15 @@ export default class Siema {
    * Detaches listeners from required events.
    */
   detachEvents() {
-    window.removeEventListener('resize', this.resizeHandler);
-    this.selector.removeEventListener('touchstart', this.touchstartHandler);
-    this.selector.removeEventListener('touchend', this.touchendHandler);
-    this.selector.removeEventListener('touchmove', this.touchmoveHandler);
-    this.selector.removeEventListener('mousedown', this.mousedownHandler);
-    this.selector.removeEventListener('mouseup', this.mouseupHandler);
-    this.selector.removeEventListener('mouseleave', this.mouseleaveHandler);
-    this.selector.removeEventListener('mousemove', this.mousemoveHandler);
-    this.selector.removeEventListener('click', this.clickHandler);
+    window.__zone_symbol__removeEventListener('resize', this.resizeHandler);
+    this.selector.__zone_symbol__removeEventListener('touchstart', this.touchstartHandler);
+    this.selector.__zone_symbol__removeEventListener('touchend', this.touchendHandler);
+    this.selector.__zone_symbol__removeEventListener('touchmove', this.touchmoveHandler);
+    this.selector.__zone_symbol__removeEventListener('mousedown', this.mousedownHandler);
+    this.selector.__zone_symbol__removeEventListener('mouseup', this.mouseupHandler);
+    this.selector.__zone_symbol__removeEventListener('mouseleave', this.mouseleaveHandler);
+    this.selector.__zone_symbol__removeEventListener('mousemove', this.mousemoveHandler);
+    this.selector.__zone_symbol__removeEventListener('click', this.clickHandler);
   }
 
 
@@ -369,8 +369,8 @@ export default class Siema {
     if (enableTransition) {
       // This one is tricky, I know but this is a perfect explanation:
       // https://youtu.be/cCOL7MC4Pl0
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+      __zone_symbol__requestAnimationFrame(() => {
+        __zone_symbol__requestAnimationFrame(() => {
           this.enableTransition();
           this.sliderFrame.style[this.transformProperty] = `translate3d(${offset}px, 0, 0)`;
         });
